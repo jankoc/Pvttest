@@ -36,6 +36,8 @@ For advanced Rust modifications, see [RUST_VECTORIZATION_GUIDE.md](RUST_VECTORIZ
 
 For pvtlib batch function usage, see [BATCH_FUNCTION_GUIDE.md](BATCH_FUNCTION_GUIDE.md)
 
+For testing batch function without modifying pvtlib, see [MONKEY_PATCH_README.md](MONKEY_PATCH_README.md)
+
 ## Installation
 
 1. Clone the repository:
