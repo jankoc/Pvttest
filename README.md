@@ -14,9 +14,19 @@ For a given pressure and temperature (default: 150 bara, 15°C).
 
 - Generates realistic natural gas compositions with proper component distributions
 - Uses GERG-2008 equation of state for accurate PVT calculations
-- Processes 100,000 compositions in ~8 seconds
-- Creates a beautiful scatter plot showing the relationship between speed of sound and density
+- **Fast performance**: 100,000 compositions in ~7-8 seconds (sequential) or ~5 seconds (parallel)
+- Creates beautiful scatter plots showing the relationship between speed of sound and density
 - Exports all data to CSV for further analysis
+- Includes performance benchmarking tools
+
+## Performance
+
+| Version | Time (100k samples) | Throughput | Use Case |
+|---------|---------------------|------------|----------|
+| Sequential | ~7-8 seconds | ~17,000 samples/sec | Simple, reliable, low memory |
+| Parallel (16 cores) | ~5 seconds | ~20,000 samples/sec | Large datasets, faster processing |
+
+For detailed performance analysis, see [PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md)
 
 ## Installation
 
@@ -38,6 +48,7 @@ git clone https://github.com/equinor/pvtlib.git
 
 ## Usage
 
+### Sequential Version (recommended for most use cases)
 Run with default settings (100,000 compositions):
 ```bash
 python gas_composition_analysis.py
@@ -48,9 +59,26 @@ Run with custom number of samples:
 python gas_composition_analysis.py -n 1000
 ```
 
+### Parallel Version (faster for large datasets)
+Use all available CPU cores:
+```bash
+python gas_composition_analysis_parallel.py
+```
+
+Use specific number of cores:
+```bash
+python gas_composition_analysis_parallel.py -n 100000 -p 8
+```
+
+### Testing and Benchmarking
 Test the setup:
 ```bash
 python test_gas_analysis.py
+```
+
+Run performance benchmark:
+```bash
+python benchmark_performance.py
 ```
 
 ## Output
