@@ -35,6 +35,7 @@ wheels/
 
 # External libraries
 pvtlib/
+pyaga8/
 
 # OS
 .DS_Store

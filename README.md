@@ -24,9 +24,14 @@ For a given pressure and temperature (default: 150 bara, 15°C).
 | Version | Time (100k samples) | Throughput | Use Case |
 |---------|---------------------|------------|----------|
 | Sequential | ~7-8 seconds | ~17,000 samples/sec | Simple, reliable, low memory |
-| Parallel (16 cores) | ~5 seconds | ~20,000 samples/sec | Large datasets, faster processing |
+| Parallel (16 cores) | ~5 seconds | ~20,000 samples/sec | Multi-core systems |
+| **Optimized** | **~1.4 seconds** | **~72,000 samples/sec** | **Best choice for most users** |
+
+**Recommendation:** Use the optimized version for 5x speedup!
 
 For detailed performance analysis, see [PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md)
+
+For advanced Rust modifications, see [RUST_VECTORIZATION_GUIDE.md](RUST_VECTORIZATION_GUIDE.md)
 
 ## Installation
 
@@ -59,7 +64,18 @@ Run with custom number of samples:
 python gas_composition_analysis.py -n 1000
 ```
 
-### Parallel Version (faster for large datasets)
+### Optimized Version (RECOMMENDED - 5x faster!)
+Best performance without complexity:
+```bash
+python gas_composition_analysis_optimized.py
+```
+
+Custom sample size:
+```bash
+python gas_composition_analysis_optimized.py -n 1000
+```
+
+### Parallel Version (alternative approach)
 Use all available CPU cores:
 ```bash
 python gas_composition_analysis_parallel.py

@@ -134,8 +134,11 @@ For most use cases, **the current performance is excellent**:
 |----------|---------------------|------------|----------------|
 | Current (sequential) | 7-8 seconds | Low | ✅ Available |
 | Parallel (16 cores) | ~5 seconds | Medium | ✅ Available |
-| Vectorized (hypothetical) | ~2-3 seconds | High | ❌ Requires pvtlib changes |
-| Pure Rust (hypothetical) | ~1-2 seconds | Very High | ❌ Complete rewrite |
+| **Optimized Python** | **1.4 seconds** | **Low** | **✅ Available** |
+| Rust Batch (modified) | ~1.0 seconds | High | ⚠️ Requires building pyaga8 |
+| Pure Rust rewrite | ~0.8-1.0 seconds | Very High | ❌ Complete rewrite |
+
+**UPDATE:** The **optimized Python version achieves 5x speedup** without any Rust modifications!
 
 ## Memory Usage
 
