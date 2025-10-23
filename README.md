@@ -14,10 +14,11 @@ For a given pressure and temperature (default: 150 bara, 15°C).
 
 - Generates realistic natural gas compositions with proper component distributions
 - Uses GERG-2008 equation of state for accurate PVT calculations
-- **Fast performance**: 100,000 compositions in ~7-8 seconds (sequential) or ~5 seconds (parallel)
+- **Fast performance**: 100,000 compositions in ~1.4 seconds with optimized batch calculation
+- **New batch function added to pvtlib**: `calculate_batch_from_PT()` for 5x speedup
 - Creates beautiful scatter plots showing the relationship between speed of sound and density
 - Exports all data to CSV for further analysis
-- Includes performance benchmarking tools
+- Includes performance benchmarking tools and comprehensive examples
 
 ## Performance
 
@@ -32,6 +33,8 @@ For a given pressure and temperature (default: 150 bara, 15°C).
 For detailed performance analysis, see [PERFORMANCE_ANALYSIS.md](PERFORMANCE_ANALYSIS.md)
 
 For advanced Rust modifications, see [RUST_VECTORIZATION_GUIDE.md](RUST_VECTORIZATION_GUIDE.md)
+
+For pvtlib batch function usage, see [BATCH_FUNCTION_GUIDE.md](BATCH_FUNCTION_GUIDE.md)
 
 ## Installation
 
